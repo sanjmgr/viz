@@ -8,7 +8,7 @@ import { Bar } from '@visx/shape'
 import React, { useMemo } from 'react'
 
 const data = letterFrequency
-const top = 60
+const top = 120
 
 // accessors
 const letters = (d: LetterFrequency) => d.letter
@@ -49,7 +49,7 @@ export const Bars = ({ width, height, evt = false }: BarsProps) => {
     <svg width={width} height={height}>
       <GradientTealBlue id='teal' />
       <rect width={width} height={height} fill='url(#teal)' rx='10' />
-      <Group top={top}>
+      <Group top={top * 0.5}>
         {data.map(d => {
           const letter = letters(d)
           const barWidth = xScale.bandwidth()
