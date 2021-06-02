@@ -1,5 +1,4 @@
 import { GradientTealBlue } from '@visx/gradient'
-import { Group } from '@visx/group'
 import letterFrequency, {
   LetterFrequency,
 } from '@visx/mock-data/lib/mocks/letterFrequency'
@@ -49,7 +48,7 @@ export const Bars = ({ width, height, evt = false }: BarsProps) => {
     <svg width={width} height={height}>
       <GradientTealBlue id='teal' />
       <rect width={width} height={height} fill='url(#teal)' rx='10' />
-      <Group top={top * 0.5}>
+      <g transform={`translate(0, ${top * 0.5})`}>
         {data.map(d => {
           const letter = letters(d)
           const barWidth = xScale.bandwidth()
@@ -71,7 +70,7 @@ export const Bars = ({ width, height, evt = false }: BarsProps) => {
             />
           )
         })}
-      </Group>
+      </g>
     </svg>
   )
 }

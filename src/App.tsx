@@ -1,6 +1,6 @@
 import { ParentSize } from '@visx/responsive'
 import React from 'react'
-import { Bars, GradientCard } from './components'
+import { Bars, GradientCard, LineSplit } from './components'
 import './style.css'
 
 const App = () => {
@@ -10,6 +10,7 @@ const App = () => {
       <ParentSize parentSizeStyles={{ width: '70vw', height: '55vh' }}>
         {({ width, height }) => (
           <>
+            <LineSplit width={width} height={height} />
             <Bars width={width} height={height} evt />
             <GradientCard width={width} height={height} />
           </>
